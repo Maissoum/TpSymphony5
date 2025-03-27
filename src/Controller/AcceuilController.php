@@ -11,6 +11,7 @@ class AcceuilController extends AbstractController
     #[Route('/acceuil', name: 'app_acceuil', methods:"GET")]
     public function index(): Response
     {
+        
         return $this->render('acceuil/index.html.twig');
     }
 }
