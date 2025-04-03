@@ -36,7 +36,7 @@ class ContactsFixtures extends Fixture
                 ->setVille($faker->city())
                 ->setCp($faker->numberBetween(75000,92000))
                 ->setMail($faker->email())
-                ->setAvatar("https://randomuser.me/api/portraits/".$type.$i.".png");
+                ->setAvatar("https://randomuser.me/api/portraits/".$type."/" .$i.".jpg");
             $manager->persist($contact);
         }
 
