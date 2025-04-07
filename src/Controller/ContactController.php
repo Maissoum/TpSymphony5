@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ContactController extends AbstractController
 {
     #[Route('/contacts', name: 'app_contacts', methods:'GET' )]
-    public function listeContact(ContactRepository $repo)
+    public function listeContacts(ContactRepository $repo)
     {
         
         $Contacts=$repo->findAll();
@@ -19,7 +19,7 @@ class ContactController extends AbstractController
     }
 
 
-    #[Route('/contact/{id}', name: 'app_ficheContact', methods:'GET' )]
+    #[Route('/contacts/{id}', name: 'app_ficheContact', methods:'GET' )]
     public function ficheContact(Contact $contact)
     {
         
