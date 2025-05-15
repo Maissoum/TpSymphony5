@@ -25,26 +25,27 @@
 
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestion des contacts</a>
                 <div class="dropdown-menu" >
                     <a class="dropdown-item" href="{{ path('app_contacts')}}">Liste des contacts</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Liste des hommes</a>
-                    <a class="dropdown-item" href="#">Liste des femmes</a>
-                    
-                </div>
+                    <a class="dropdown-item" href="{{path ('listeContactsSexe', {'sexe': 0})}}">Liste des hommes</a>
+                    <a class="dropdown-item" href="{{path ('listeContactsSexe', {'sexe': 1})}}">Liste des femmes</a>
+                </div>   
+            </li>
 
+            <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestion des catégories</a>
+                <div class="dropdown-menu" >
+                    <a class="dropdown-item" href="{{ path('app_contacts')}}">Liste des catégories</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ path('nbContactsParCat')}}">Nombre de contacts par catégorie</a>
+                </div>   
+            </li>
+                             
 
-
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ path('app_contacts')}}">Liste des contacts
-                    </a>
-                </li>
-
-                  <li class="nav-item ">
-                    <a class="nav-link" href="{{ path('app_categories')}}">Liste des catégories
-                    </a>
-                </li>
+                  
         
             </ul>
             

@@ -25,4 +25,15 @@ class ContactController extends AbstractController
         
         return $this->render('contact/ficheContact.html.twig', [ 'leContact' => $contact ] );
     }
+    
+
+    #[Route('/contacts/sexe/{sexe}', name: 'listeContactsSexe', methods:'GET' )]
+    public function listeContactsSexe( $sexe, ContactRepository $repo )
+    {
+        //$Contacts=$repo->findBy(['sexe' => $sexe], ['nom' => 'ASC'] );
+        $Contacts=$repo->findBySexe($sexe);
+        return $this->render('contact/listeContacts.html.twig', [ 'lesContacts' => $Contacts ] );
+    }
+
+
 }

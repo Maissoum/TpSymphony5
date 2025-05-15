@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listes des Catégories{% endblock %}
+
+{% block body %}
+{% set total = 0 %}
+
+
+
+<h1 class="text-center pt-2"> Statistique des catégorie</h1>
+<hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Libellé de la catégorie</th>
+      <th scope="col">Nombre de contacts</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for laCategorie in lesCategories %}
+
+        <tr>
+            <th scope="row">{{laCategorie.libelle}}</th>
+            <td>{{laCategorie.nbContacts}}</td>
+        </tr>
+    {% set total = total + laCategorie.nbContacts %}
+        
+    {% endfor %}
+
+    
+   
+  </tbody>
+  <tfoot class="tables-warning">
+    <tr>
+      <th scope="row">Total</th>
+      <th scope="col"> {{total}} </th>
+    </tr>
+
+  </tfoot>
+</table>
+
+{% endblock %}

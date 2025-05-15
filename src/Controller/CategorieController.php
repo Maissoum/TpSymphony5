@@ -26,4 +26,14 @@ class CategorieController extends AbstractController
             'laCategorie' => $categorie 
         ]);
     }
+
+    #[Route('/categories/nbContactsParCat', name: 'nbContactsParCat', methods:'GET' )]
+    public function CalculNbContactsParCat(CategorieRepository $repo) 
+    {
+        $categorie=$repo->nbContactsParCat();
+        dd($categorie);
+        return $this->render('categorie/listeCategories.html.twig', [
+            'lesCategories' => $categorie 
+        ]);
+    }
 }
